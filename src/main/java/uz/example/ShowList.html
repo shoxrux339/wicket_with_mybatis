@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<wicket:extend>
+    <div class="container">
+        <div class="row">
+            <table style="width:100%">
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr wicket:id="persons">
+                    <td wicket:id="id">id</td>
+                    <td wicket:id="firstname">firstname</td>
+                    <td wicket:id="lastname">lastname</td>
+                    <td wicket:id="email">email</td>
+                    <td wicket:id="age">age</td>
+                    <td><a wicket:id="edit" href="#">edit</a></td>
+                    <td><a wicket:id="delete" href="#">delete</a></td>
+                </tr>
+
+            </table>
+            <div >
+
+            </div>
+        </div>
+    </div>
+</wicket:extend>
+</body>
+</html>

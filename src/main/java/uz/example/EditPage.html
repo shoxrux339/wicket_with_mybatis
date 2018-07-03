@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<wicket:extend>
+    <form wicket:id="form" method="post" class="contact3-form validate-form">
+						<span class="contact3-form-title">
+							Contact Us
+						</span>
+
+        <div class="wrap-input3 validate-input" data-validate="ID">
+            <input wicket:id="personId" class="input3" type="text" name="personId" placeholder="Your ID">
+            <span class="focus-input3"></span>
+        </div>
+
+        <div class="wrap-input3 validate-input" data-validate="First name">
+            <input wicket:id="firstname" class="input3" type="text" name="firstname" placeholder="Your First Name">
+            <span class="focus-input3"></span>
+        </div>
+
+        <div class="wrap-input3 validate-input" data-validate="Last name">
+            <input wicket:id="lastname" class="input3" type="text" name="lastname" placeholder="Your Last Name">
+            <span class="focus-input3"></span>
+        </div>
+
+        <div class="wrap-input3 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+            <input wicket:id="email" class="input3" type="text" name="email" placeholder="Your Email">
+            <span class="focus-input3"></span>
+        </div>
+
+        <div class="wrap-input3 validate-input" data-validate="Message is required">
+            <input wicket:id="age" class="input3" name="age" placeholder="Your Age" type="text">
+            <span class="focus-input3"></span>
+        </div>
+
+        <div class="container-contact3-form-btn">
+            <button class="contact3-form-btn" wicket:id="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+</wicket:extend>
+</body>
+</html>

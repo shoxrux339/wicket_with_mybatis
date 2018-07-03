@@ -1,0 +1,40 @@
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="uz.example.mapper.PersonMapper">
+
+    <resultMap id="person" type="uz.example.domain.Person">
+        <id property="id" column="id"/>
+        <result property="firstname" column="firstname"/>
+        <result property="lastname" column="lastname"/>
+        <result property="email" column="email"/>
+        <result property="age" column="age"/>
+    </resultMap>
+
+    <select id="getPersonById" parameterType="java.lang.Integer"
+            resultMap="person">  <!-- ссылка на ResultMap по которому и будет происходить мапинг-->
+        select * from person where id = #{id}
+    </select>
+
+    <select id="getPersons" resultMap="person">
+        select * from person
+    </select>
+
+    <insert id="insertPerson" parameterType="uz.example.domain.Person" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO person (id,firstname,lastname,email,age) VALUES (#{id}, #{firstname}, #{lastname}, #{email}, #{age})
+    </insert>
+
+    <update id="updatePerson" parameterType="uz.example.domain.Person" flushCache="true"
+            statementType="PREPARED"
+            timeout="20">
+        UPDATE person SET id = ,
+        firstname = #{firstname},
+        lastname = #{lastname},
+        email = #{email},
+        age = #{age} where id = #{id}
+    </update>
+
+    <delete id="deletePerson" parameterType="java.lang.Integer">
+        DELETE FROM person WHERE id = #{id}
+    </delete>
+
+</mapper>
